@@ -3,8 +3,8 @@ from spotipy.oauth2 import SpotifyClientCredentials
 import json
 
 def process_url_playlist(url):
-    SPOTIPY_CLIENT_ID='6836949b05d449f396e5360fe8ec61d0'
-    SPOTIPY_CLIENT_SECRET='02a84c798f52458abbe588a2fadd333d'
+    SPOTIPY_CLIENT_ID=None
+    SPOTIPY_CLIENT_SECRET=None
 
     auth_manager = SpotifyClientCredentials(
         client_id=SPOTIPY_CLIENT_ID,

@@ -1,6 +1,6 @@
 # FastAPI y Spotify API
 
-[![FastAPI](https://geekflare.com/wp-content/uploads/2019/07/fast-api-logo.png =210x80)](https://fastapi.tiangolo.com/)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![Spotify](https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Spotify_logo_with_text.svg/1024px-Spotify_logo_with_text.svg.png =210x80)](https://developer.spotify.com/documentation/web-api/)
+[<img src="https://geekflare.com/wp-content/uploads/2019/07/fast-api-logo.png" width="20%">](https://fastapi.tiangolo.com/)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Spotify_logo_with_text.svg/1024px-Spotify_logo_with_text.svg.png" width="20%">](https://developer.spotify.com/documentation/web-api/)
 
 API para obtener los nombres, artistas y links de todas tus canciones de una Playlist de Spotify.
 
@@ -15,6 +15,7 @@ API para obtener los nombres, artistas y links de todas tus canciones de una Pla
 4. Dirigite a la pagina web para desarrolladores de Spotify ([API Spotify](https://developer.spotify.com/dashboard/login))
 
     4.1 Inicia sesión, crea una APP y copia las credenciales: `Client ID` y `Client Secret`
+
     4.2 Pega las credenciales en el archivo `utilities.py` que se encuentra en `/src/utils/`
 
 5. Ejecuta la API: `python .\src\main.py`

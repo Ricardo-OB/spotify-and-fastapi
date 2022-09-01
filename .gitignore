@@ -3,3 +3,4 @@ venv
 borrar.py
 borrar2.py
 *.cache
+credentials.txt
