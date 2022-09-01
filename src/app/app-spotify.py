@@ -10,6 +10,6 @@ class URL_Item(BaseModel):
     url: str
 
 @app.post('/', status_code=200)
-async def download(request: URL_Item):
+async def get_songs(request: URL_Item):
     songs = process_url_playlist(request.url)
     return songs
