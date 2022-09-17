@@ -3,4 +3,6 @@ venv
 borrar.py
 borrar2.py
 *.cache
-credentials.txt
+credentials.py
+songs_not_downloaded.txt
+songs

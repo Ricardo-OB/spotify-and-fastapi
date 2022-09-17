@@ -1,14 +1,13 @@
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
-import json
+import json, os
+from utils.credentials import cred
 
 def process_url_playlist(url):
-    SPOTIPY_CLIENT_ID=None
-    SPOTIPY_CLIENT_SECRET=None
-
+    
     auth_manager = SpotifyClientCredentials(
-        client_id=SPOTIPY_CLIENT_ID,
-        client_secret=SPOTIPY_CLIENT_SECRET
+        client_id = cred['SPOTIPY_CLIENT_ID'],
+        client_secret= cred['SPOTIPY_CLIENT_SECRET']
     )
     sp = spotipy.Spotify(auth_manager=auth_manager)
 
@@ -27,3 +26,10 @@ def process_url_playlist(url):
         dict_songs[str(index+1)]['artist'] = list_artists
     
     return dict_songs
+
+def count_songs(path):
+    files_count = 0
+    for file in os.listdir(path):
+        if os.path.isfile(os.path.join(path, file)):
+            files_count += 1
+    return files_count
