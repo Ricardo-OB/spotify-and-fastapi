@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href={{url_for("static", path="/css/styles.css")}}>
+    <title>Transfer Songs</title>
+</head>
+<body>
+    <nav class="navbar text-white navbar-dark bg-dark border-bottom">
+        <div class="container text-white d-flex flex-wrap">
+          <ul class="nav me-auto text-white">
+            <li class="nav-item text-white">
+                <a href="{{url_for('homeMain')}}" class="nav-link link-primary px-2 active text-white" aria-current="page">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+                        <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z"/>
+                    </svg>
+                Home</a>
+            </li>
+            <li class="nav-item text-white">
+                <a href="#" class="nav-link link-primary px-2 active text-white" aria-current="page">About</a>
+            </li>
+          </ul>
+        </div>
+    </nav>
+    <div class="container text-white">
+        <br>
+        <p>
+            <a href="{{url_for('homeTransfer')}}" class="text-decoration-none">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-square" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm11.5 5.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"></path>
+                </svg>
+                Volver
+            </a>
+        </p>
+    </div>
+    <div class="container text-white">
+        <br>
+        <p>
+            A la derecha se encuentra la lista de canciones de tu Playlist origen (a transferir), y al lado
+            izquierdo la lista de canciones de tu Playlist destino.
+        </p>
+        <br>
+    </div>
+    <div class="container text-white" style="text-align: center;">
+        <form method="POST" action="{{url_for('finalTransferSongs')}}" class="text-white">
+            <div class="input-group mb-3 w-75">
+                <span class="input-group-text">URL Playlist Origen</span>
+                <input type="text" readonly class="form-control" name="url_1" id="url_1" value={{url_1}}>
+            </div>
+            <div class="input-group mb-3 w-75">
+                <span class="input-group-text" id="basic-addon1">URL Playlist Destino</span>
+                <input type="text" readonly class="form-control" name="url_2" id="url_2" value={{url_2}}>
+            </div>
+            <hr>
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16" style="float: left; margin-left: 14em">
+                <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
+                <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+            </svg>
+            <button type="submit" class="btn btn-outline-light" style="margin: auto;">Iniciar Envio</button>
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16" style="float: right; margin-right: 15em">
+                <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"/>
+                <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+            </svg>
+        </form>
+        <br>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h4 class="text-white">{{name_playlist_1}}</h4>
+                <br>
+                <table class="table table-hover table-dark table-bordered" style="display: inline-block; font-size: 14px;">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Artist(s)</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        {% for num, info in songs_1.items() %}
+                        <tr style="height: 1pt;">
+                            <th scope="row">{{num}}</th>
+                            <td WIDTH=250>{{info['name']}}</td>
+                            <td WIDTH=200>{{info['artist']}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="col">
+                <h4 class="text-white">{{name_playlist_2}}</h4>
+                <br>
+                <table class="table table-hover table-dark table-bordered" style="display: inline-block; font-size: 14px;">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Artist(s)</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        {% for num, info in songs_2.items() %}
+                        <tr style="height: 1pt;">
+                            <th scope="row">{{num}}</th>
+                            <td WIDTH=250>{{info['name']}}</td>
+                            <td WIDTH=200>{{info['artist']}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="../static/functions.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+</html>

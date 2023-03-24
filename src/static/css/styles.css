@@ -1,0 +1,25 @@
+body{
+    background-color: #212529 !important;
+}
+
+/* div h1, p{
+    color: white;
+    text-align: center;
+} */
+.backg-text{
+    color: white;
+    text-align: center;
+}
+
+.text-white{
+    color: white;
+}
+
+.imgsCenter{
+    margin: 0em 2em 0em 2em;
+}
+
+.iframe{
+    float: left;
+    margin: 1em 0em 1em 2em;
+}

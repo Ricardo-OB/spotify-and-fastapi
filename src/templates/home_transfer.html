@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href={{url_for("static", path="/css/styles.css")}}>
+    <title>Home Transfer</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", (event) => {
+            document.getElementById("myFormPlaylists").addEventListener("button", function (e) {
+                e.preventDefault(); // Cancel the default action
+                submitForm();
+            });
+        });
+    </script>
+</head>
+<body>
+    <nav class="navbar text-white navbar-dark bg-dark border-bottom">
+        <div class="container text-white d-flex flex-wrap">
+          <ul class="nav me-auto text-white">
+            <li class="nav-item text-white">
+                <a href="{{url_for('homeMain')}}" class="nav-link link-primary px-2 active text-white" aria-current="page">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+                        <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z"/>
+                    </svg>
+                Home</a>
+                <li class="nav-item text-white">
+                    <a href="#" class="nav-link link-primary px-2 active text-white" aria-current="page">About</a>
+                </li>
+            </li>
+          </ul>
+        </div>
+    </nav>
+    <div class="container text-white">
+        <br><br>
+        <p>Puedes explorar la Playlist a transferir y tu Playlist destino. Recuerda que el URL de la Playlist destino debe ser tuya.</p>
+        <hr>
+        <br>
+    </div>
+    <div class="container text-white">
+        <form method="POST" id="myFormPlaylists" action="{{url_for('transferSongs')}}">
+            <div class="form-group col-12 col-m-6 col-lg-8">
+                <label for="exampleURL1" style="margin-bottom: 0.5em;">URL de Playlist a transferir</label>
+                <div class="input-group mb-3">
+                    <input type="url" class="form-control" name="exampleURL1" id="exampleURL1" placeholder="Ingrese URL 1" required>
+                    <button type="button" class="btn btn-outline-light" onclick="showPlaylists()">Mostrar</button>
+                </div>
+            </div>
+            <br>
+            <div class="form-group col-12 col-m-6 col-lg-8">
+                <label for="exampleURL2" style="margin-bottom: 0.5em;">URL de Playlist destino</label>
+                <div class="input-group mb-3">
+                    <input type="url" class="form-control" name="exampleURL2" id="exampleURL2" placeholder="Ingrese URL 2" required>
+                    <button type="button" class="btn btn-outline-light" onclick="showPlaylists()">Mostrar</button>
+                </div>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-outline-light">Ir a Transferir</button>
+        </form>
+        <br>
+        <hr>
+    </div>
+
+    <div class="container text-white" id="responseArea">
+        {{html_frames}}
+    </div>
+    
+    <script src="../static/functions.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href={{url_for("static", path="/css/styles.css")}}>
+    <title>Login</title>
+</head>
+<body>
+    <div class="container backg-text">
+        <br><br><br>
+        <h1>Spotify Playlist Manager</h1>
+        <br>
+        <hr style="color: aliceblue;">
+    </div>
+    <div class="container text-center">
+        <img src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_RGB_White.png" width="200" class="imgsCenter">
+        <img src="https://www.shareicon.net/data/512x512/2015/08/30/93006_logo_512x512.png" width="200" class="imgsCenter">
+    </div>
+    <br>
+    <div class="col-lg-6 col-md-8 mx-auto backg-text">
+        <p>Elimina y agrega canciones a tus Playlist de una manera facil. 
+            Crea y elimina Playlist completas. Con Spotify Playlist Manager puedes interactuar con 
+            tus playlists y playlists publicas de otros usuarios.
+        </p>
+    </div>
+    <br>
+    <form class="text-center" action="{{url_for('preRedirectPage')}}">
+        <button type="submit" class="btn btn-outline-light btn-lg">Entrar</button>
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+</html>
