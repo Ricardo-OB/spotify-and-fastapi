@@ -4,7 +4,7 @@
 
 API para obtener los nombres, artistas y links de todas tus canciones de una Playlist de Spotify. Adicionalmente puedes descargar las canciones
 
-[<img src="" width="20%">](https://fastapi.tiangolo.com/)
+![main](https://github.com/Ricardo-OB/spotify-and-fastapi/blob/master/src/imgs/img1.png)
 
 ## Pasos para ver las canciones de una Playlist
 
